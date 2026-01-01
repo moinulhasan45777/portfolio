@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
 import DotGrid from "../components/DotGrid";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
 });
 
@@ -26,23 +21,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-[#BEBFC5]`}
+        className={`${roboto.variable}  antialiased bg-[#111111] text-[#dddddd]`}
       >
         <div
           style={{
             position: "relative",
-            minHeight: "100vh" /* example long page */,
+            minHeight: "100vh",
           }}
         >
           {/* DotGrid background */}
           <div
             style={{
-              position: "absolute", // scrolls with content
+              position: "absolute",
               top: 0,
               left: 0,
               width: "100%",
               height: "100%",
-              zIndex: 0,
+              zIndex: 5,
             }}
           >
             <DotGrid
@@ -57,7 +52,7 @@ export default function RootLayout({
             />
           </div>
           {/* Page content */}
-          <div className="max-w-7xl">{children}</div>
+          <div className="relative max-w-7xl mx-auto z-20">{children}</div>
         </div>
       </body>
     </html>
