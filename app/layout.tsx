@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import DotGrid from "../components/DotGrid";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -52,6 +53,7 @@ export default function RootLayout({
             />
           </div>
           {/* Page content */}
+          <Navbar></Navbar>
           <div className="relative max-w-7xl mx-auto z-20">{children}</div>
         </div>
       </body>
