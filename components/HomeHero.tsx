@@ -5,6 +5,7 @@ import AnimatedContent from "./AnimatedContent";
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithubSquare } from "react-icons/fa";
+import { FaResearchgate } from "react-icons/fa";
 
 export default function HomeHero() {
   return (
@@ -46,7 +47,7 @@ export default function HomeHero() {
               href="https://www.researchgate.net/profile/Moinul-Hasan-7"
               className="flex items-center gap-1 px-2 py-1.5 border-[#E5E4E2] ring-[0.5px] hover:bg-[#343434]  transition-all duration-150 ease-in-out"
             >
-              <FaLinkedin className="text-xl" />
+              <FaResearchgate className="text-xl" />
               <span className="font-light text-sm">Research Gate</span>
             </Link>
           </div>

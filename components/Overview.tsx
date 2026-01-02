@@ -12,11 +12,11 @@ export default function Overview() {
             Things I&apos;ve been exploring
           </h2>
           <Link
-            className="text-xs text-white/50 flex items-center gap-0.5 underline hover:text-white/80 hover:no-underline"
+            className="text-xs text-white/50 flex items-center gap-0.5 underline hover:text-white/80 group hover:gap-1"
             href=""
           >
             <span>More about me</span>
-            <MdKeyboardArrowRight className="text-sm" />
+            <MdKeyboardArrowRight className="text-sm group-hover:-mr-0.5" />
           </Link>
         </div>
         <p className="mb-5 text-base font-light text-white/60 max-w-2xl">
@@ -28,7 +28,7 @@ export default function Overview() {
           <AnimatedContent
             duration={2}
             distance={50}
-            className="border border-white/40 p-7"
+            className="border border-white/40 p-7 relative"
           >
             <h3 className="text-2xl font-normal mb-2">
               Full Stack Development
