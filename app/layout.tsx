@@ -46,10 +46,7 @@ export default function RootLayout({
               gap={25}
               baseColor="#1B1B1B"
               proximity={0}
-              shockRadius={250}
-              shockStrength={5}
-              resistance={750}
-              returnDuration={1.5}
+              shockStrength={0}
             />
           </div>
           {/* Page content */}

@@ -1,14 +1,19 @@
 "use client";
 import Image from "next/image";
-import logo from "@/app/assets/logo.png";
+import logo from "@/assets/logo.png";
 import Link from "next/link";
 import GlareHover from "./GlareHover";
 import AnimatedContent from "./AnimatedContent";
 
 export default function Navbar() {
   return (
-    <AnimatedContent reverse duration={2} className="relative z-20">
-      <nav className=" fixed top-0  w-full bg-[#111111] px-10 z-20">
+    <AnimatedContent
+      reverse
+      duration={2}
+      distance={50}
+      className="relative z-20"
+    >
+      <nav className=" sticky top-0  w-full bg-[#111111] px-10 z-20">
         <div className="h-20 max-w-7xl flex items-center justify-between mx-auto">
           <Image src={logo} alt="Logo" className="w-25"></Image>
           <ul className="flex items-center gap-9 text-sm font-semibold">
