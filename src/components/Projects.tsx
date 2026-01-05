@@ -97,7 +97,7 @@ export default function Projects() {
           <div className="flex items-center gap-3 mb-4">
             <span className="h-px w-8 bg-primary"></span>
             <span className="text-primary font-bold tracking-widest uppercase text-sm">
-              Portfolio
+              Projects
             </span>
             <span className="h-px w-8 bg-primary"></span>
           </div>

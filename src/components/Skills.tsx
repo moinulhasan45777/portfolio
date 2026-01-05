@@ -2,13 +2,29 @@
 
 import { motion } from "framer-motion";
 
+interface Skill {
+  name: string;
+  icon: string;
+  customIcon?: string;
+}
+
+interface SkillCategory {
+  title: string;
+  icon: string;
+  skills: Skill[];
+}
+
 export default function Skills() {
-  const skillCategories = [
+  const skillCategories: SkillCategory[] = [
     {
       title: "Languages",
       icon: "fas fa-code",
       skills: [
-        { name: "TypeScript", icon: "fab fa-js text-yellow-400" },
+        {
+          name: "TypeScript",
+          icon: "fab fa-js-square text-blue-500",
+          customIcon: "TS",
+        },
         { name: "JavaScript", icon: "fab fa-js text-yellow-400" },
         { name: "C#", icon: "fas fa-code text-purple-500" },
         { name: "Python", icon: "fab fa-python text-blue-400" },
@@ -140,7 +156,36 @@ export default function Skills() {
                       key={skillIndex}
                       className="flex items-center gap-2 bg-background-dark px-4 py-2 rounded border border-gray-800 text-gray-300 hover:text-white hover:border-primary/50 transition-colors cursor-pointer"
                     >
-                      <i className={skill.icon} />
+                      {skill.customIcon ? (
+                        <div className="w-4 h-4 flex items-center justify-center">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="text-blue-500"
+                          >
+                            <rect
+                              width="24"
+                              height="24"
+                              rx="4"
+                              fill="currentColor"
+                            />
+                            <text
+                              x="12"
+                              y="16"
+                              textAnchor="middle"
+                              className="fill-white text-xs font-bold"
+                              style={{ fontSize: "10px" }}
+                            >
+                              TS
+                            </text>
+                          </svg>
+                        </div>
+                      ) : (
+                        <i className={skill.icon} />
+                      )}
                       {skill.name}
                     </div>
                   ))}
