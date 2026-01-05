@@ -55,7 +55,11 @@ export default function Contact() {
               to discussing new projects, creative ideas or opportunities to be
               part of your visions.
             </p>
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form
+              className="space-y-6"
+              onSubmit={handleSubmit}
+              id="contact-form"
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="relative">
                   <input

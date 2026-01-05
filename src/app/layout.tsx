@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -30,7 +32,11 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} font-body bg-background-dark text-text-main min-h-screen flex flex-col selection:bg-primary selection:text-white`}
       >
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <SmoothScrollProvider>
+          <Navigation />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

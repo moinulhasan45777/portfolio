@@ -13,14 +13,49 @@ export default function Footer() {
 
     e.preventDefault();
 
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
+    // Check if we're on the homepage
+    const isHomepage = window.location.pathname === "/";
+
+    if (isHomepage) {
+      // If on homepage, scroll to section
+      const targetElement = document.querySelector(href);
+      if (targetElement) {
+        const lenis = (window as any).lenis;
+        if (lenis) {
+          // Add tiny negative offset to show a bit above the contact section
+          const offset = href === "#contact" ? -30 : 0;
+
+          lenis.scrollTo(targetElement, {
+            duration: 1.5,
+            offset: offset,
+          });
+        } else {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    } else {
+      // If on another page, navigate to homepage with hash
+      window.location.href = `/${href}`;
+    }
+  };
+
+  const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    // Check if we're on the homepage
+    const isHomepage = window.location.pathname === "/";
+
+    if (isHomepage) {
+      // If on homepage, scroll to top
       const lenis = (window as any).lenis;
       if (lenis) {
-        lenis.scrollTo(targetElement, { duration: 1.5 });
+        lenis.scrollTo(0, { duration: 1.5 });
       } else {
-        targetElement.scrollIntoView({ behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
+    } else {
+      // If on another page, navigate to homepage
+      window.location.href = "/";
     }
   };
 
@@ -29,7 +64,11 @@ export default function Footer() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           <div className="lg:col-span-2">
-            <a className="inline-block mb-2 group" href="#">
+            <a
+              className="inline-block mb-2 group"
+              href="#"
+              onClick={handleScrollToTop}
+            >
               <h3 className="text-3xl font-bold font-display text-white tracking-tight group-hover:text-primary transition-colors">
                 Moinul Hasan
                 <span className="text-primary group-hover:text-white transition-colors">

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -197,18 +198,15 @@ export default function Projects() {
 
                   <div className="flex-grow"></div>
 
-                  <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      // You can implement a modal or detailed view here
-                      console.log(`Show details for ${project.title}`);
-                    }}
+                  <Link
+                    href={`/projects/${project.title
+                      .toLowerCase()
+                      .replace(/\s+/g, "-")}`}
                     className="inline-flex items-center text-primary font-bold text-sm tracking-wide uppercase hover:text-white transition-colors group/link"
                   >
                     More Details
                     <i className="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             );

@@ -65,13 +65,41 @@ export default function Navigation() {
       }
     };
 
-    // Simple approach: just prevent scrolling without body position manipulation
+    // Apply blur and prevent interactions when menu is open
     if (isMenuOpen) {
       // Prevent scrolling by adding overflow hidden to body
       document.body.style.overflow = "hidden";
+
+      // Add blur effect to main content
+      const mainContent = document.querySelector("main");
+      const footer = document.querySelector("footer");
+      if (mainContent) {
+        mainContent.style.filter = "blur(4px)";
+        mainContent.style.pointerEvents = "none";
+        mainContent.style.userSelect = "none";
+      }
+      if (footer) {
+        footer.style.filter = "blur(4px)";
+        footer.style.pointerEvents = "none";
+        footer.style.userSelect = "none";
+      }
     } else {
-      // Restore scrolling
+      // Restore scrolling and remove blur
       document.body.style.overflow = "";
+
+      // Remove blur effect from main content
+      const mainContent = document.querySelector("main");
+      const footer = document.querySelector("footer");
+      if (mainContent) {
+        mainContent.style.filter = "";
+        mainContent.style.pointerEvents = "";
+        mainContent.style.userSelect = "";
+      }
+      if (footer) {
+        footer.style.filter = "";
+        footer.style.pointerEvents = "";
+        footer.style.userSelect = "";
+      }
     }
 
     window.addEventListener("resize", handleResize);
@@ -80,8 +108,20 @@ export default function Navigation() {
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("orientationchange", handleResize);
-      // Clean up body styles on unmount
+      // Clean up body styles and blur effects on unmount
       document.body.style.overflow = "";
+      const mainContent = document.querySelector("main");
+      const footer = document.querySelector("footer");
+      if (mainContent) {
+        mainContent.style.filter = "";
+        mainContent.style.pointerEvents = "";
+        mainContent.style.userSelect = "";
+      }
+      if (footer) {
+        footer.style.filter = "";
+        footer.style.pointerEvents = "";
+        footer.style.userSelect = "";
+      }
     };
   }, [isMenuOpen]);
 
@@ -123,13 +163,22 @@ export default function Navigation() {
   const handleScrollToTop = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
 
-    // Get Lenis instance from window
-    const lenis = (window as any).lenis;
-    if (lenis) {
-      lenis.scrollTo(0, { duration: 1.5 });
+    // Check if we're on the homepage
+    const isHomepage = window.location.pathname === "/";
+
+    if (isHomepage) {
+      // If on homepage, scroll to top
+      // Get Lenis instance from window
+      const lenis = (window as any).lenis;
+      if (lenis) {
+        lenis.scrollTo(0, { duration: 1.5 });
+      } else {
+        // Fallback to native smooth scroll
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     } else {
-      // Fallback to native smooth scroll
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      // If on another page, navigate to homepage
+      window.location.href = "/";
     }
   };
 
@@ -152,16 +201,31 @@ export default function Navigation() {
     // Reset the clicked flag after a brief moment to re-enable transitions
     setTimeout(() => setIsClicked(false), 100);
 
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
-      // Get Lenis instance from window
-      const lenis = (window as any).lenis;
-      if (lenis) {
-        lenis.scrollTo(targetElement, { duration: 1.5 });
-      } else {
-        // Fallback to native smooth scroll
-        targetElement.scrollIntoView({ behavior: "smooth" });
+    // Check if we're on the homepage
+    const isHomepage = window.location.pathname === "/";
+
+    if (isHomepage) {
+      // If on homepage, scroll to section
+      const targetElement = document.querySelector(href);
+      if (targetElement) {
+        // Get Lenis instance from window
+        const lenis = (window as any).lenis;
+        if (lenis) {
+          // Add tiny negative offset to show a bit above the contact section
+          const offset = href === "#contact" ? -30 : 0;
+
+          lenis.scrollTo(targetElement, {
+            duration: 1.5,
+            offset: offset,
+          });
+        } else {
+          // Fallback to native smooth scroll
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }
       }
+    } else {
+      // If on another page, navigate to homepage with hash
+      window.location.href = `/${href}`;
     }
 
     // Close mobile menu if open
@@ -259,8 +323,14 @@ export default function Navigation() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm lg:hidden z-30"
+              className="fixed inset-0 bg-black/50 lg:hidden z-40"
               onClick={() => setIsMenuOpen(false)}
+              style={{
+                touchAction: "none",
+                WebkitTouchCallout: "none",
+                WebkitUserSelect: "none",
+                userSelect: "none",
+              }}
             />
 
             {/* Menu Panel */}
@@ -270,7 +340,7 @@ export default function Navigation() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "100%" }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="fixed top-0 right-0 h-screen w-80 max-w-[85vw] bg-surface-dark border-l border-gray-800 lg:hidden z-40 pt-20 overflow-hidden"
+              className="fixed top-0 right-0 h-screen w-80 max-w-[85vw] bg-surface-dark border-l border-gray-800 lg:hidden z-50 pt-20 overflow-hidden"
               style={{
                 height: "100dvh", // Dynamic viewport height for mobile browsers
               }}
