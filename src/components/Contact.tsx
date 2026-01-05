@@ -2,14 +2,19 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
+  const { toast } = useToast();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -20,10 +25,92 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+
+    try {
+      // Using your Formspree form endpoint
+      const response = await fetch("https://formspree.io/f/mqeajlqe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email,
+        }),
+      });
+
+      if (response.ok) {
+        // Success toast
+        toast({
+          title: "Message sent successfully! 🎉",
+          description: "Thank you for reaching out. I'll get back to you soon!",
+          duration: 5000,
+          className:
+            "border-primary/20 bg-primary/10 text-primary shadow-[0_0_20px_rgba(255,87,51,0.2)]",
+        });
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        throw new Error("Formspree submission failed");
+      }
+    } catch (error) {
+      console.error("Email sending failed:", error);
+
+      // Fallback to mailto
+      try {
+        const subject = encodeURIComponent(formData.subject);
+        const body = encodeURIComponent(
+          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        );
+        const mailtoLink = `mailto:moinul.hasan45777@gmail.com?subject=${subject}&body=${body}`;
+
+        // Open default email client
+        window.location.href = mailtoLink;
+
+        // Fallback toast
+        toast({
+          title: "Opening your email client...",
+          description:
+            "If it doesn't open, please email me directly at moinul.hasan45777@gmail.com",
+          duration: 6000,
+          className:
+            "border-blue-500/20 bg-blue-500/10 text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.2)]",
+        });
+
+        // Reset form after a delay
+        setTimeout(() => {
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          });
+        }, 3000);
+      } catch (mailtoError) {
+        // Error toast
+        toast({
+          title: "Unable to send message",
+          description:
+            "Please email me directly at moinul.hasan45777@gmail.com",
+          variant: "destructive",
+          duration: 6000,
+        });
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -130,11 +217,26 @@ export default function Contact() {
                   Message
                 </label>
               </div>
+
               <button
-                className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold transition-all duration-300 rounded shadow-[0_0_15px_rgba(255,87,51,0.3)] hover:shadow-[0_0_25px_rgba(255,87,51,0.6)] hover:scale-105 uppercase tracking-wider text-sm"
+                className={`inline-flex items-center justify-center px-8 py-4 font-bold transition-all duration-300 rounded uppercase tracking-wider text-sm ${
+                  isSubmitting
+                    ? "bg-gray-600 text-gray-300 cursor-not-allowed"
+                    : "bg-primary text-white shadow-[0_0_15px_rgba(255,87,51,0.3)] hover:shadow-[0_0_25px_rgba(255,87,51,0.6)] hover:scale-105"
+                }`}
                 type="submit"
+                disabled={isSubmitting}
               >
-                Send Message <i className="fas fa-paper-plane ml-2"></i>
+                {isSubmitting ? (
+                  <>
+                    <i className="fas fa-spinner fa-spin mr-2"></i>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message <i className="fas fa-paper-plane ml-2"></i>
+                  </>
+                )}
               </button>
             </form>
           </motion.div>
@@ -207,9 +309,9 @@ export default function Contact() {
                 </a>
                 <a
                   className="w-10 h-10 rounded-full bg-surface-dark border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:border-primary hover:bg-primary transition-all duration-300"
-                  href="#"
+                  href="https://www.researchgate.net/profile/Moinul-Hasan-7"
                 >
-                  <i className="fab fa-twitter"></i>
+                  <i className="fab fa-researchgate"></i>
                 </a>
                 <a
                   className="w-10 h-10 rounded-full bg-surface-dark border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:border-primary hover:bg-primary transition-all duration-300"

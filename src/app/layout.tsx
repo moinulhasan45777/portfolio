@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/toaster";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({
           <Navigation />
           <main className="flex-grow">{children}</main>
           <Footer />
+          <Toaster />
         </SmoothScrollProvider>
       </body>
     </html>
