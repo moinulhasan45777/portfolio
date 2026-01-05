@@ -197,7 +197,9 @@ export default function Footer() {
         </div>
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
           <p>© 2026 Moinul Hasan. All rights reserved.</p>
-          <p>Designed & Built with Next.js, Shadcn & Framer Motion</p>
+          <p className="md:text-center">
+            Designed & Built with Next.js, Shadcn & Framer Motion
+          </p>
         </div>
       </div>
     </footer>
