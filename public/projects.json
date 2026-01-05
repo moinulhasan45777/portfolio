@@ -1,0 +1,119 @@
+[
+  {
+    "title": "EcoStep",
+    "subTitle": "A Sustainable E-commerce Platform for Eco-Friendly Products",
+    "image": "https://i.ibb.co/r2MC0Grp/ecostep.png",
+    "category": "Full Stack Web Application",
+    "date": "November, 2025",
+    "projectDescription": "EcoStep is a full-stack B2B/B2C e-commerce platform focused on promoting eco-friendly and sustainable products. The platform allows users to browse, purchase, and manage green products while providing secure authentication, role-based access, and a smooth user experience. It is designed to support both customers and administrators with modern web technologies.",
+    "keyFeatureTitles": [
+      "User Authentication & Authorization",
+      "Product Management System",
+      "Secure Payment & Order Handling",
+      "Responsive & Interactive UI"
+    ],
+    "keyFeatureDescription": [
+      "Implemented secure user authentication using Firebase and JWT, including role-based access for users and admins.",
+      "Admins can add, update, and delete products, while users can browse products with detailed information and categories.",
+      "Integrated secure order management with protected routes to ensure only authorized users can place and view orders.",
+      "Built a fully responsive and user-friendly interface using React.js, Tailwind CSS, and Swiper Slider for enhanced UX."
+    ],
+    "challengesFacedTitle": [
+      "Authentication & Security Handling",
+      "State Management Across Components"
+    ],
+    "challengesFacedDescription": [
+      "Managing JWT-based authentication alongside Firebase authentication and securing API routes was initially complex.",
+      "Handling shared state between multiple components and ensuring consistent data flow required careful component design."
+    ],
+    "improvements": [
+      "Add an advanced analytics dashboard for admins",
+      "Integrate a full payment gateway like Stripe",
+      "Implement product reviews and ratings",
+      "Optimize performance with server-side caching"
+    ],
+    "frontEnd": ["JavaScript", "React.js", "Swiper Slider", "Tailwind CSS"],
+    "backEnd": ["Node.js", "Express.js", "Firebase", "JWT"],
+    "databaseDeploy": ["MongoDB", "Firebase"],
+    "live": "https://eco-step-b2b55.web.app/",
+    "github": "https://github.com/moinulhasan45777/EcoStep-Client-ReactJS-ExpressJS-"
+  },
+  {
+    "title": "InfraFix",
+    "subTitle": "An Infrastructure Issue Reporting and Management Platform",
+    "image": "https://i.ibb.co/KpP1dJgZ/Infrafix.png",
+    "category": "Full Stack Web Application",
+    "date": "November, 2025",
+    "projectDescription": "InfraFix is a full-stack web application designed to report, track, and manage infrastructure-related issues efficiently. The platform enables users to submit issues with detailed descriptions, while administrators can monitor, update, and resolve reports through a secure and scalable system. It focuses on real-time data handling, performance optimization, and a seamless user experience.",
+    "keyFeatureTitles": [
+      "Role-Based Authentication",
+      "Issue Reporting & Tracking",
+      "Optimized Data Fetching",
+      "Responsive Admin Dashboard"
+    ],
+    "keyFeatureDescription": [
+      "Implemented secure role-based authentication using Firebase and JWT to control access for users and administrators.",
+      "Users can submit infrastructure issues, track their status, and view updates in real time.",
+      "Integrated TanStack Query for efficient data fetching, caching, and background synchronization.",
+      "Developed a responsive admin dashboard for managing reported issues using React.js and Tailwind CSS."
+    ],
+    "challengesFacedTitle": [
+      "Efficient Data Synchronization",
+      "Secure API Route Protection"
+    ],
+    "challengesFacedDescription": [
+      "Ensuring up-to-date issue data across multiple views while minimizing unnecessary API calls required careful TanStack Query configuration.",
+      "Protecting sensitive admin routes and validating JWT tokens consistently across the server posed initial challenges."
+    ],
+    "improvements": [
+      "Add real-time notifications using WebSockets",
+      "Implement issue prioritization and severity levels",
+      "Introduce user feedback and resolution ratings",
+      "Enhance scalability with microservice-based architecture"
+    ],
+    "frontEnd": ["JavaScript", "React.js", "TanStack Query", "Tailwind CSS"],
+    "backEnd": ["Node.js", "Express.js", "Firebase", "JWT"],
+    "databaseDeploy": ["MongoDB", "Firebase"],
+    "live": "https://infrafix-eaa0b.web.app/",
+    "github": "https://github.com/moinulhasan45777/InfraFix-Client-React-TanstackQuery"
+  },
+  {
+    "title": "StudyPal",
+    "subTitle": "A Smart Study Management and Collaboration Platform",
+    "image": "https://i.ibb.co/SXgY5Ptv/Study-Pal.png",
+    "category": "Full Stack Web Application",
+    "date": "November, 2025",
+    "projectDescription": "StudyPal is a full-stack study management and collaboration platform built to help students organize their study materials, track progress, and collaborate effectively. The application provides a clean, modern interface with secure authentication and scalable backend services, focusing on productivity, accessibility, and performance.",
+    "keyFeatureTitles": [
+      "User Authentication & Access Control",
+      "Study Resource Management",
+      "Progress Tracking System",
+      "Responsive & Modern UI"
+    ],
+    "keyFeatureDescription": [
+      "Implemented secure user authentication using Firebase, allowing users to safely access personalized study data.",
+      "Users can create, update, and organize study resources such as notes, tasks, and study plans.",
+      "Integrated progress tracking features to help users monitor their learning goals and study consistency.",
+      "Built a responsive and performant interface using Next.js and Tailwind CSS for an optimized user experience."
+    ],
+    "challengesFacedTitle": [
+      "Server-Side Rendering with Authentication",
+      "Data Consistency Across Pages"
+    ],
+    "challengesFacedDescription": [
+      "Handling authentication flows alongside Next.js server-side rendering required careful configuration and testing.",
+      "Maintaining consistent and up-to-date study data across multiple routes and components was initially challenging."
+    ],
+    "improvements": [
+      "Add real-time collaboration features",
+      "Integrate calendar and reminder notifications",
+      "Implement study analytics and insights",
+      "Introduce role-based access for tutors or mentors"
+    ],
+    "frontEnd": ["JavaScript", "Next.js", "Tailwind CSS"],
+    "backEnd": ["Node.js", "Express.js", "Firebase"],
+    "databaseDeploy": ["MongoDB", "Vercel"],
+    "live": "https://study-pal-client.vercel.app/",
+    "github": "https://github.com/moinulhasan45777/StudyPal-Client-NextJS"
+  }
+]

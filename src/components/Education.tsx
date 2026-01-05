@@ -57,7 +57,7 @@ export default function Education() {
               <div className="relative bg-background-dark border border-gray-800 rounded-xl p-8 hover:border-primary/50 transition-all duration-300 shadow-xl group-hover:shadow-[0_0_30px_rgba(0,0,0,0.5)]">
                 <div className="lg:hidden mb-4 flex items-center justify-between">
                   <span className="text-primary text-sm font-bold uppercase tracking-wider border border-primary/20 bg-primary/5 px-3 py-1 rounded-full">
-                    2023 - 2026
+                    2021 - 2026
                   </span>
                   <i className="fas fa-graduation-cap text-gray-600"></i>
                 </div>

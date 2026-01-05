@@ -12,7 +12,10 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+
+      // Simple: show background if scrolled more than 5px, hide only at very top
+      setScrolled(currentScrollY > 5);
 
       // Detect active section
       const sections = [
@@ -22,7 +25,7 @@ export default function Navigation() {
         "projects",
         "contact",
       ];
-      const scrollPosition = window.scrollY + 100; // Offset for navbar height
+      const scrollPosition = currentScrollY + 100; // Offset for navbar height
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -39,14 +42,48 @@ export default function Navigation() {
       }
 
       // If at the very top, no section is active
-      if (window.scrollY < 100) {
+      if (currentScrollY < 100) {
         setActiveSection("");
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Simple event listener - no throttling for mobile reliability
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Initial call
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Handle mobile viewport and menu positioning
+  useEffect(() => {
+    const handleResize = () => {
+      // Close menu on orientation change or resize to prevent positioning issues
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    // Simple approach: just prevent scrolling without body position manipulation
+    if (isMenuOpen) {
+      // Prevent scrolling by adding overflow hidden to body
+      document.body.style.overflow = "hidden";
+    } else {
+      // Restore scrolling
+      document.body.style.overflow = "";
+    }
+
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("orientationchange", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("orientationchange", handleResize);
+      // Clean up body styles on unmount
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
 
   // Handle click outside to close menu
   useEffect(() => {
@@ -56,7 +93,21 @@ export default function Navigation() {
         menuRef.current &&
         !menuRef.current.contains(event.target as Node)
       ) {
+        // Prevent any scroll position changes when closing menu
+        event.preventDefault();
+        event.stopPropagation();
+
+        // Store current scroll position
+        const currentScrollY = window.scrollY;
+
         setIsMenuOpen(false);
+
+        // Ensure scroll position doesn't change
+        requestAnimationFrame(() => {
+          if (window.scrollY !== currentScrollY) {
+            window.scrollTo(0, currentScrollY);
+          }
+        });
       }
     };
 
@@ -219,7 +270,10 @@ export default function Navigation() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "100%" }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="fixed top-0 right-0 h-screen w-80 bg-surface-dark border-l border-gray-800 lg:hidden z-40 pt-20"
+              className="fixed top-0 right-0 h-screen w-80 max-w-[85vw] bg-surface-dark border-l border-gray-800 lg:hidden z-40 pt-20 overflow-hidden"
+              style={{
+                height: "100dvh", // Dynamic viewport height for mobile browsers
+              }}
             >
               <div className="flex flex-col space-y-6 px-8">
                 {navItems.map((item) => {
