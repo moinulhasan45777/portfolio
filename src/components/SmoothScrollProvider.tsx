@@ -9,9 +9,58 @@ export default function SmoothScrollProvider({
   children: React.ReactNode;
 }) {
   useEffect(() => {
+    // Aggressive scroll position reset for mobile
+    const resetScrollPosition = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+
+      // Additional reset for webkit browsers
+      if (document.documentElement.scrollTop !== 0) {
+        document.documentElement.scrollTop = 0;
+      }
+      if (document.body.scrollTop !== 0) {
+        document.body.scrollTop = 0;
+      }
+    };
+
+    // Initial reset
+    resetScrollPosition();
+
     // Prevent default hash scroll behavior on page load
     if (window.location.hash) {
-      window.scrollTo(0, 0);
+      resetScrollPosition();
+    }
+
+    // Additional mobile-specific handling
+    const isMobile =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+
+    if (isMobile) {
+      // Prevent scroll restoration on mobile
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      // Multiple attempts to ensure scroll position is at top
+      const mobileScrollReset = () => {
+        resetScrollPosition();
+
+        // Additional reset after DOM is fully ready
+        requestAnimationFrame(() => {
+          resetScrollPosition();
+        });
+      };
+
+      // Immediate reset
+      mobileScrollReset();
+
+      // Reset after short delay for mobile browser quirks
+      setTimeout(mobileScrollReset, 50);
+      setTimeout(mobileScrollReset, 100);
+      setTimeout(mobileScrollReset, 200);
     }
 
     const lenis = new Lenis({

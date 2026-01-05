@@ -8,6 +8,41 @@ html,
 body {
   overflow-x: hidden;
   max-width: 100vw;
+  scroll-behavior: auto; /* Disable smooth scroll initially to prevent mobile issues */
+}
+
+/* Mobile-specific fixes for scroll position */
+@media (max-width: 768px) {
+  html,
+  body {
+    position: relative;
+    overflow-x: hidden;
+    /* Prevent any initial scroll offset */
+    scroll-padding-top: 0;
+    scroll-margin-top: 0;
+  }
+
+  /* Prevent address bar scroll issues on mobile */
+  body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    /* Ensure body starts at top */
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    height: -webkit-fill-available;
+    /* Ensure html starts at top */
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Prevent any viewport-related scroll issues */
+  * {
+    scroll-margin-top: 0;
+    scroll-padding-top: 0;
+  }
 }
 
 * {
@@ -32,7 +67,8 @@ body {
 }
 
 html {
-  scroll-behavior: smooth;
+  /* Lenis will handle smooth scrolling, so we disable browser's default */
+  scroll-behavior: auto;
 }
 
 .line-clamp-3 {

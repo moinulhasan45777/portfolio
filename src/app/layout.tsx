@@ -25,6 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"
+        />
         <link
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
           rel="stylesheet"
@@ -33,6 +37,46 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} font-body bg-background-dark text-text-main min-h-screen flex flex-col selection:bg-primary selection:text-white`}
       >
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Aggressive scroll position reset
+              (function() {
+                // Prevent scroll restoration
+                if ('scrollRestoration' in history) {
+                  history.scrollRestoration = 'manual';
+                }
+                
+                // Multiple scroll resets to handle different browser behaviors
+                const resetScroll = () => {
+                  window.scrollTo(0, 0);
+                  document.documentElement.scrollTop = 0;
+                  document.body.scrollTop = 0;
+                };
+                
+                // Immediate reset
+                resetScroll();
+                
+                // Reset on DOM ready
+                if (document.readyState === 'loading') {
+                  document.addEventListener('DOMContentLoaded', resetScroll);
+                } else {
+                  resetScroll();
+                }
+                
+                // Reset after page load
+                window.addEventListener('load', resetScroll);
+                
+                // Additional mobile-specific resets
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                  setTimeout(resetScroll, 0);
+                  setTimeout(resetScroll, 10);
+                  setTimeout(resetScroll, 50);
+                }
+              })();
+            `,
+          }}
+        />
         <SmoothScrollProvider>
           <Navigation />
           <main className="flex-grow">{children}</main>

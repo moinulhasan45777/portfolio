@@ -255,15 +255,15 @@ export default function Contact() {
               </h3>
               <div className="space-y-8 relative z-10">
                 <div className="flex items-start gap-5 group/item">
-                  <div className="w-12 h-12 rounded-lg bg-surface-dark border border-gray-700 flex items-center justify-center text-primary shadow-lg group-hover/item:border-primary transition-colors">
+                  <div className="w-12 h-12 min-w-[48px] min-h-[48px] flex-shrink-0 rounded-lg bg-surface-dark border border-gray-700 flex items-center justify-center text-primary shadow-lg group-hover/item:border-primary transition-colors">
                     <i className="fas fa-envelope text-xl"></i>
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <h4 className="text-gray-500 text-sm font-bold uppercase tracking-wider mb-1">
                       Email Address
                     </h4>
                     <a
-                      className="text-white text-lg font-medium hover:text-primary transition-colors break-all"
+                      className="text-white text-lg font-medium hover:text-primary transition-colors break-words"
                       href="mailto:moinul.hasan45777@gmail.com"
                     >
                       moinul.hasan45777@gmail.com
@@ -271,10 +271,10 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="flex items-start gap-5 group/item">
-                  <div className="w-12 h-12 rounded-lg bg-surface-dark border border-gray-700 flex items-center justify-center text-primary shadow-lg group-hover/item:border-primary transition-colors">
+                  <div className="w-12 h-12 min-w-[48px] min-h-[48px] flex-shrink-0 rounded-lg bg-surface-dark border border-gray-700 flex items-center justify-center text-primary shadow-lg group-hover/item:border-primary transition-colors">
                     <i className="fas fa-phone-alt text-xl"></i>
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <h4 className="text-gray-500 text-sm font-bold uppercase tracking-wider mb-1">
                       Phone Number
                     </h4>
@@ -287,10 +287,10 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="flex items-start gap-5 group/item">
-                  <div className="w-12 h-12 rounded-lg bg-surface-dark border border-gray-700 flex items-center justify-center text-primary shadow-lg group-hover/item:border-primary transition-colors">
+                  <div className="w-12 h-12 min-w-[48px] min-h-[48px] flex-shrink-0 rounded-lg bg-surface-dark border border-gray-700 flex items-center justify-center text-primary shadow-lg group-hover/item:border-primary transition-colors">
                     <i className="fas fa-map-marker-alt text-xl"></i>
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <h4 className="text-gray-500 text-sm font-bold uppercase tracking-wider mb-1">
                       Location
                     </h4>
