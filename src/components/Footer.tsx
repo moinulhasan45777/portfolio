@@ -1,5 +1,8 @@
 "use client";
 
+import Image from "next/image";
+import navbarLogo from "@/assets/navbarlogo.svg";
+
 export default function Footer() {
   const handleSmoothScroll = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -69,15 +72,32 @@ export default function Footer() {
               href="#"
               onClick={handleScrollToTop}
             >
-              <h3 className="text-3xl font-bold font-display text-white tracking-tight group-hover:text-primary transition-colors">
-                Moinul Hasan
-                <span className="text-primary group-hover:text-white transition-colors">
+              <div className="flex items-center">
+                <Image
+                  src={navbarLogo}
+                  alt="Moinul Hasan Logo"
+                  width={140}
+                  height={45}
+                  className="h-10 w-auto transition-all duration-300"
+                  style={{
+                    filter: "brightness(1)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.filter =
+                      "brightness(0) saturate(100%) invert(47%) sepia(96%) saturate(4456%) hue-rotate(8deg) brightness(101%) contrast(101%)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.filter = "brightness(1)";
+                  }}
+                  priority
+                />
+                <span className="text-primary group-hover:text-white transition-colors text-4xl font-bold ml-1 leading-none">
                   .
                 </span>
-              </h3>
+              </div>
             </a>
             <p className="text-gray-300 font-medium text-lg mb-4">
-              Software Developer
+              Full Stack Developer
             </p>
             <p className="text-gray-500 text-sm leading-relaxed mb-8 max-w-sm">
               Creating scalable and efficient web applications with a focus on
@@ -198,7 +218,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
           <p>© 2026 Moinul Hasan. All rights reserved.</p>
           <p className="text-center">
-            Designed & Built with Next.js, Shadcn & Framer Motion
+            Designed &amp; Built with Next.js, Shadcn &amp; Framer Motion
           </p>
         </div>
       </div>

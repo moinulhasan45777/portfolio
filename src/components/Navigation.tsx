@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import navbarLogo from "@/assets/navbarlogo.svg";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -256,10 +258,27 @@ export default function Navigation() {
     >
       <motion.div
         whileHover={{ scale: 1.05 }}
-        className="text-2xl font-bold font-display tracking-tight text-white hover:text-primary transition-colors cursor-pointer"
+        className="flex items-center cursor-pointer group"
         onClick={handleScrollToTop}
       >
-        Moinul Hasan
+        <Image
+          src={navbarLogo}
+          alt="Moinul Hasan Logo"
+          width={100}
+          height={32}
+          className="h-8 w-auto transition-all duration-300 group-hover:brightness-0 group-hover:saturate-100"
+          style={{
+            filter: "brightness(1)",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.filter =
+              "brightness(0) saturate(100%) invert(47%) sepia(96%) saturate(4456%) hue-rotate(8deg) brightness(101%) contrast(101%)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.filter = "brightness(1)";
+          }}
+          priority
+        />
       </motion.div>
 
       <div className="hidden lg:flex items-center space-x-8 text-sm font-medium">
@@ -310,7 +329,7 @@ export default function Navigation() {
         className="lg:hidden text-2xl focus:outline-none text-white hover:text-primary transition-colors"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
-        <i className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"}`}></i>
+        <i className="fas fa-bars"></i>
       </button>
 
       {/* Mobile Menu */}
@@ -340,12 +359,23 @@ export default function Navigation() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "100%" }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="fixed top-0 right-0 h-screen w-80 max-w-[85vw] bg-surface-dark border-l border-gray-800 lg:hidden z-50 pt-20 overflow-hidden"
+              className="fixed top-0 right-0 h-screen w-80 max-w-[85vw] bg-surface-dark border-l border-gray-800 lg:hidden z-50 overflow-hidden"
               style={{
                 height: "100dvh", // Dynamic viewport height for mobile browsers
               }}
             >
-              <div className="flex flex-col space-y-6 px-8">
+              <div className="flex flex-col space-y-6 px-8 pt-8">
+                {/* Close Button */}
+                <div className="flex justify-end mb-4">
+                  <button
+                    onClick={() => setIsMenuOpen(false)}
+                    className="w-10 h-10 rounded-full bg-background-dark border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:border-primary hover:bg-primary/10 transition-all duration-300"
+                    aria-label="Close menu"
+                  >
+                    <i className="fas fa-times text-lg"></i>
+                  </button>
+                </div>
+
                 {navItems.map((item) => {
                   const isActive = activeSection === item.href;
                   const isPdf = item.href.endsWith(".pdf");

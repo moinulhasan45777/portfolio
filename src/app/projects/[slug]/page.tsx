@@ -313,15 +313,6 @@ export default function ProjectDetails({ params }: ProjectDetailsProps) {
                 >
                   GitHub Repository <i className="fab fa-github ml-2"></i>
                 </a>
-                <button
-                  className="flex items-center justify-center w-full px-6 py-4 bg-gradient-to-r from-primary to-orange-600 text-white font-bold rounded shadow-[0_0_15px_rgba(255,87,51,0.3)] hover:shadow-[0_0_25px_rgba(255,87,51,0.6)] hover:scale-[1.02] transition-all duration-300 uppercase tracking-wide text-sm"
-                  onClick={() => {
-                    // Use replace to avoid adding to browser history
-                    window.location.replace("/#contact");
-                  }}
-                >
-                  Get In Touch <i className="fas fa-envelope ml-2"></i>
-                </button>
               </div>
             </div>
           </div>

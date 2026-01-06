@@ -13,8 +13,18 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Moinul Hasan - Portfolio",
+  title: "Moinul Hasan | Portfolio",
   description: "Full Stack Developer Portfolio",
+  icons: {
+    icon: [
+      {
+        url: "/favicon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
