@@ -180,6 +180,16 @@ export default function Footer() {
                   Projects
                 </a>
               </li>
+              <li>
+                <a
+                  className="text-gray-400 hover:text-primary transition-colors flex items-center group"
+                  href="#achievements"
+                  onClick={(e) => handleSmoothScroll(e, "#achievements")}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-gray-600 mr-2 group-hover:bg-primary transition-colors"></span>
+                  Achievements
+                </a>
+              </li>
             </ul>
           </div>
           <div className="md:col-span-1">

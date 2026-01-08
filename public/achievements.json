@@ -1,0 +1,59 @@
+[
+  {
+    "title": "20th Place at App Showcasing Event - PC Builder Desktop App",
+    "subtitle": "AIUB CS Fest 2024",
+    "team": "Neural Nexas",
+    "about": "AIUB CS Fest 2024 was a large-scale technology and innovation event organized by the Department of Computer Science at AIUB. The festival featured multiple segments including App Showcasing, Game Showcasing, Web Applications, Desktop Applications, and Mobile Applications. Students and teams from various backgrounds presented their projects, exchanged ideas, and received feedback from peers and faculty members. The event created an engaging platform for showcasing creativity, technical skills, and real-world problem-solving approaches.",
+    "description": "I built and showcased a PC Builder desktop application to industry leading experts from prestigious companies of Bangladesh at AIUB CS Fest 2024 under the \"App Showcasing\" segment. The application allows users to either order a complete custom PC build or purchase individual components. A key highlight of the system is its compatibility-based component selection, where users are only shown components that are compatible with the current build configuration. The app also implements role-based access control for Admin, Staff, and Customers, ensuring secure and organized management of orders and data. The project was developed as a desktop application using C# and MySQL.",
+    "quote": "Building software is one thing, but showcasing it in front of industry leading professionals teaches you how real users think—and that lesson is priceless.",
+    "learning": [
+      "How to present a technical product clearly to both technical and non-technical audiences.",
+      "The importance of user experience and logical constraints, especially in compatibility-based systems.",
+      "Practical implementation of role-based access control in a real application.",
+      "Handling real-time feedback and questions during live demonstrations.",
+      "Gained confidence in explaining design decisions, system architecture, and features."
+    ],
+    "banner": "appshowcase.jpg",
+    "supportingImage": "appshowcasingexternal.jpg",
+    "category": "event",
+    "date": "April 2024"
+  },
+  {
+    "title": "Most Valuable Player Award at D1 Cup Season 2 (CS:GO)",
+    "subtitle": "Discovery One Cup Season 2",
+    "team": "Red ViperZ Gaming",
+    "about": "Discovery One Cup Season 2 was a large-scale national eSports event held at the Bashundhara Convention Center, Bangladesh, in September 2023. The event featured multiple competitive gaming tournaments including Counter-Strike: Global Offensive (CS:GO), Valorant, and Mobile Legends: Bang Bang (MLBB). Recognized as one of the biggest national eSports events ever hosted in Bangladesh, the tournament brought together top teams and players from across the country, creating a highly competitive and professional gaming environment.",
+    "description": "I participated in the Counter-Strike: Global Offensive (CS:GO) segment of Discovery One Cup Season 2 with Red ViperZ Gaming. Our team emerged as the tournament champion, remaining completely unbeaten throughout the event without losing a single map. I was awarded the Most Valuable Player (MVP) title for achieving the highest number of frags across the entire tournament. This achievement reflects strong individual performance, teamwork, consistency, and the ability to perform under high-pressure competitive scenarios.",
+    "quote": "Winning is special, but earning MVP while staying unbeaten as a team proves the power of preparation, trust, and discipline.",
+    "learning": [
+      "Developed strong teamwork and in-game communication skills in a competitive environment.",
+      "Improved decision-making and composure under high-pressure match situations.",
+      "Learned the importance of preparation, strategy execution, and role discipline.",
+      "Enhanced mechanical skill consistency and situational awareness during tournaments.",
+      "Gained experience performing confidently on a national stage in front of live audiences."
+    ],
+    "banner": "mvp.jpg",
+    "supportingImage": "mvpsupport.jpg",
+    "category": "event",
+    "date": "September 2023"
+  },
+  {
+    "title": "Represented Bangladesh at IESF 14th World Esports Championship Bali 2022",
+    "subtitle": "IESF 14th World Esports Championship Bali 2022",
+    "team": "Red ViperZ Gaming",
+    "about": "The IESF 14th World Esports Championship 2022 is the flagship global competitive gaming event organized by the International Esports Federation (IESF). It was held in Bali, Indonesia, in December 2022 with competitors representing over 100 countries across multiple game titles, including Counter-Strike: Global Offensive (CS:GO). The championship brought together world-class national teams and esports federations, promoting competitive excellence, cultural exchange, and international sportsmanship.",
+    "description": "I represented Bangladesh as a member of Red ViperZ Gaming in the Counter-Strike: Global Offensive (CS:GO) division at the IESF 14th World Esports Championship Bali 2022. After qualifying through national and regional competitions against teams from India, Pakistan, Nepal, and Sri Lanka, we competed on the world stage against elite international teams. Although we were eliminated in the group stage, the experience provided invaluable exposure to global competition standards and marked a historic milestone as the only Bangladeshi CS:GO team to reach the IESF World Championship.",
+    "quote": "Standing on the world stage reminded me that true growth comes not from winning or losing, but from pushing beyond familiar limits and learning from the best.",
+    "learning": [
+      "Experienced the intensity and discipline required at world-class esports tournaments.",
+      "Learned to adapt strategies against diverse international playstyles.",
+      "Developed mental resilience and confidence competing on a global stage.",
+      "Gained insight into professional preparation, teamwork, and communication at elite levels.",
+      "Understood the value of representing one's country with pride and sportsmanship."
+    ],
+    "banner": "iesf2022.jpg",
+    "supportingImage": "iesf2022support.jpg",
+    "category": "event",
+    "date": "December 2022"
+  }
+]

@@ -25,6 +25,7 @@ export default function Navigation() {
         "expertise",
         "education",
         "projects",
+        "achievements",
         "contact",
       ];
       const scrollPosition = currentScrollY + 100; // Offset for navbar height
@@ -239,6 +240,7 @@ export default function Navigation() {
     { href: "#expertise", label: "Skills" },
     { href: "#education", label: "Education" },
     { href: "#projects", label: "Projects" },
+    { href: "#achievements", label: "Achievements" },
     { href: "/Moinul  Hasan_Resume.pdf", label: "Resume" },
   ];
 
