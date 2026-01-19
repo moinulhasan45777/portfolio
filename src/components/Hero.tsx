@@ -26,7 +26,7 @@ export default function Hero() {
           duration: 2,
           ease: "power2.out",
           delay: 0.5,
-        }
+        },
       );
 
       gsap.fromTo(
@@ -38,7 +38,7 @@ export default function Hero() {
           duration: 2,
           ease: "power2.out",
           delay: 0.8,
-        }
+        },
       );
 
       // Continuous floating animation for background elements
@@ -255,7 +255,7 @@ export default function Hero() {
                 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center justify-center px-6 sm:px-8 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold transition-all duration-200 ease-out rounded shadow-[0_0_15px_rgba(255,87,51,0.2)] hover:shadow-[0_0_25px_rgba(255,87,51,0.4)] hover:scale-105 text-center w-auto tracking-wide whitespace-nowrap"
-                href="/Moinul  Hasan_Resume.pdf"
+                href="/Moinul Hasan_Resume.pdf"
                 download="Moinul Hasan - Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"

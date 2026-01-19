@@ -46,7 +46,7 @@ export default function Education() {
                   2026
                 </span>
                 <p className="text-sm text-primary uppercase tracking-widest mt-1 font-semibold">
-                  Expected Graduation
+                  Graduated
                 </p>
               </div>
             </div>

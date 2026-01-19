@@ -17,7 +17,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,
@@ -49,7 +49,8 @@ export default function Contact() {
         // Success toast
         toast({
           title: "Message sent successfully! 🎉",
-          description: "Thank you for reaching out. I'll get back to you soon!",
+          description:
+            "Thank you for reaching out. I&apos;ll get back to you soon!",
           duration: 5000,
           className:
             "border-primary/20 bg-primary/10 text-primary shadow-[0_0_20px_rgba(255,87,51,0.2)]",
@@ -72,7 +73,7 @@ export default function Contact() {
       try {
         const subject = encodeURIComponent(formData.subject);
         const body = encodeURIComponent(
-          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
         );
         const mailtoLink = `mailto:moinul.hasan45777@gmail.com?subject=${subject}&body=${body}`;
 
@@ -83,7 +84,7 @@ export default function Contact() {
         toast({
           title: "Opening your email client...",
           description:
-            "If it doesn't open, please email me directly at moinul.hasan45777@gmail.com",
+            "If it doesn&apos;t open, please email me directly at moinul.hasan45777@gmail.com",
           duration: 6000,
           className:
             "border-blue-500/20 bg-blue-500/10 text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.2)]",
@@ -134,13 +135,13 @@ export default function Contact() {
               </span>
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-display leading-tight">
-              Let's work <br />
+              Let&apos;s work <br />
               <span className="text-gray-600">together.</span>
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-2xl">
-              Have a project in mind or just want to say hello? I'm always open
-              to discussing new projects, creative ideas or opportunities to be
-              part of your visions.
+              Have a project in mind or just want to say hello? I&apos;m always
+              open to discussing new projects, creative ideas or opportunities
+              to be part of your visions.
             </p>
             <form
               className="space-y-6"

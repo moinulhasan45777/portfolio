@@ -53,8 +53,8 @@ export default function RootLayout({
               // Aggressive scroll position reset
               (function() {
                 // Prevent scroll restoration
-                if ('scrollRestoration' in history) {
-                  history.scrollRestoration = 'manual';
+                if (&apos;scrollRestoration&apos; in history) {
+                  history.scrollRestoration = &apos;manual&apos;;
                 }
                 
                 // Multiple scroll resets to handle different browser behaviors
@@ -68,14 +68,14 @@ export default function RootLayout({
                 resetScroll();
                 
                 // Reset on DOM ready
-                if (document.readyState === 'loading') {
-                  document.addEventListener('DOMContentLoaded', resetScroll);
+                if (document.readyState === &apos;loading&apos;) {
+                  document.addEventListener(&apos;DOMContentLoaded&apos;, resetScroll);
                 } else {
                   resetScroll();
                 }
                 
                 // Reset after page load
-                window.addEventListener('load', resetScroll);
+                window.addEventListener(&apos;load&apos;, resetScroll);
                 
                 // Additional mobile-specific resets
                 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {

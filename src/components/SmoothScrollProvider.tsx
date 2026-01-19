@@ -35,7 +35,7 @@ export default function SmoothScrollProvider({
     // Additional mobile-specific handling
     const isMobile =
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
+        navigator.userAgent,
       );
 
     if (isMobile) {
@@ -82,12 +82,12 @@ export default function SmoothScrollProvider({
     const handleInitialHash = () => {
       const hash = window.location.hash;
       if (hash) {
-        // Prevent browser's default hash scroll behavior
+        // Prevent browser&apos;s default hash scroll behavior
         if (window.history.replaceState) {
           window.history.replaceState(
             null,
             "",
-            window.location.pathname + window.location.search
+            window.location.pathname + window.location.search,
           );
         }
 
@@ -103,14 +103,14 @@ export default function SmoothScrollProvider({
               offset: offset,
             });
           }
-        }, 300); // Reduced timeout since we're preventing default behavior
+        }, 300); // Reduced timeout since we&apos;re preventing default behavior
       }
     };
 
     // Handle hash navigation on page load
     handleInitialHash();
 
-    // Prevent browser's default hash scrolling behavior
+    // Prevent browser&apos;s default hash scrolling behavior
     const preventHashScroll = (e: Event) => {
       if (window.location.hash) {
         e.preventDefault();

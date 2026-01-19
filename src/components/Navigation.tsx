@@ -145,7 +145,7 @@ export default function Navigation() {
 
         setIsMenuOpen(false);
 
-        // Ensure scroll position doesn't change
+        // Ensure scroll position doesn&apos;t change
         requestAnimationFrame(() => {
           if (window.scrollY !== currentScrollY) {
             window.scrollTo(0, currentScrollY);
@@ -166,7 +166,7 @@ export default function Navigation() {
   const handleScrollToTop = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
 
-    // Check if we're on the homepage
+    // Check if we&apos;re on the homepage
     const isHomepage = window.location.pathname === "/";
 
     if (isHomepage) {
@@ -187,7 +187,7 @@ export default function Navigation() {
 
   const handleSmoothScroll = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
   ) => {
     // Handle PDF download
     if (href.endsWith(".pdf")) {
@@ -204,7 +204,7 @@ export default function Navigation() {
     // Reset the clicked flag after a brief moment to re-enable transitions
     setTimeout(() => setIsClicked(false), 100);
 
-    // Check if we're on the homepage
+    // Check if we&apos;re on the homepage
     const isHomepage = window.location.pathname === "/";
 
     if (isHomepage) {
@@ -241,7 +241,7 @@ export default function Navigation() {
     { href: "#education", label: "Education" },
     { href: "#projects", label: "Projects" },
     { href: "#achievements", label: "Achievements" },
-    { href: "/Moinul  Hasan_Resume.pdf", label: "Resume" },
+    { href: "/Moinul Hasan_Resume.pdf", label: "Resume" },
   ];
 
   return (

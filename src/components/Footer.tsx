@@ -6,7 +6,7 @@ import navbarLogo from "@/assets/navbarlogo.svg";
 export default function Footer() {
   const handleSmoothScroll = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
   ) => {
     // Handle PDF download
     if (href.endsWith(".pdf")) {
@@ -16,7 +16,7 @@ export default function Footer() {
 
     e.preventDefault();
 
-    // Check if we're on the homepage
+    // Check if we&apos;re on the homepage
     const isHomepage = window.location.pathname === "/";
 
     if (isHomepage) {
@@ -45,7 +45,7 @@ export default function Footer() {
   const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
 
-    // Check if we're on the homepage
+    // Check if we&apos;re on the homepage
     const isHomepage = window.location.pathname === "/";
 
     if (isHomepage) {
@@ -101,7 +101,7 @@ export default function Footer() {
             </p>
             <p className="text-gray-500 text-sm leading-relaxed mb-8 max-w-sm">
               Creating scalable and efficient web applications with a focus on
-              user experience and clean architecture. Let's build something
+              user experience and clean architecture. Let&apos;s build something
               amazing together.
             </p>
             <div className="flex items-center gap-4">
@@ -210,7 +210,7 @@ export default function Footer() {
               <li>
                 <a
                   className="text-gray-400 hover:text-primary transition-colors flex items-center group"
-                  href="/Moinul  Hasan_Resume.pdf"
+                  href="/Moinul Hasan_Resume.pdf"
                   onClick={(e) =>
                     handleSmoothScroll(e, "/Moinul  Hasan_Resume.pdf")
                   }

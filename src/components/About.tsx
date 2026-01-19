@@ -31,14 +31,14 @@ export default function About() {
             </h2>
             <div className="space-y-6 text-gray-400 text-lg leading-relaxed mb-10">
               <p>
-                I'm Moinul Hasan, a Full Stack Developer with a pragmatic
+                I&apos;m Moinul Hasan, a Full Stack Developer with a pragmatic
                 approach to building systems. While I appreciate aesthetics, my
                 true passion lies in the architecture that powers them. I focus
                 on creating scalable, efficient, and maintainable codebases that
                 stand the test of time.
               </p>
               <p>
-                With 1 year of hands-on experience, I've navigated the
+                With 1 year of hands-on experience, I&apos;ve navigated the
                 complexities of full-stack development. From optimizing database
                 queries to fine-tuning frontend performance, I treat every line
                 of code as a critical component of the user experience.
@@ -73,7 +73,7 @@ export default function About() {
             <div className="mt-10">
               <a
                 className="inline-flex items-center text-primary font-bold hover:text-white transition-colors group text-sm uppercase tracking-wider"
-                href="/Moinul  Hasan_Resume.pdf"
+                href="/Moinul Hasan_Resume.pdf"
                 download="Moinul Hasan - Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -119,11 +119,14 @@ export default function About() {
                   </div>
                   <div className="pl-4">
                     <span className="text-blue-400">name</span>:
-                    <span className="text-green-400">'Moinul'</span>,
+                    <span className="text-green-400">&apos;Moinul&apos;</span>,
                   </div>
                   <div className="pl-4">
                     <span className="text-blue-400">focus</span>:
-                    <span className="text-green-400">'Innovation'</span>,
+                    <span className="text-green-400">
+                      &apos;Innovation&apos;
+                    </span>
+                    ,
                   </div>
                   <div className="pl-4">
                     <span className="text-blue-400">coffee</span>:
