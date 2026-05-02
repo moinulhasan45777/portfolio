@@ -24,9 +24,16 @@ interface Achievement {
   date: string;
 }
 
-export default function Achievements() {
+export default function AllAchievements() {
   const [achievements, setAchievements] = useState<Achievement[]>([]);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Reset scroll position to top when component mounts
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, []);
 
   useEffect(() => {
     const fetchAchievements = async () => {
@@ -51,10 +58,10 @@ export default function Achievements() {
       "mvp.jpg": mvpImg,
       "iesf2022.jpg": iesf2022Img,
     };
-    return imageMap[bannerName] || appshowcaseImg; // fallback to first image
+    return imageMap[bannerName] || appshowcaseImg;
   };
 
-  // Helper function to format date to short format (e.g., "Sep 2023")
+  // Helper function to format date to short format
   const formatDate = (dateString: string): string => {
     const months = [
       "Jan",
@@ -108,49 +115,56 @@ export default function Achievements() {
 
   if (loading) {
     return (
-      <section
-        className="w-full bg-surface-dark py-20 lg:py-28 relative border-t border-gray-800"
-        id="achievements"
-      >
-        <div className="container mx-auto px-6 md:px-12 relative z-10">
-          <div className="flex justify-center items-center">
-            <div className="text-white text-lg">Loading achievements...</div>
-          </div>
-        </div>
-      </section>
+      <div className="min-h-screen bg-background-dark flex items-center justify-center">
+        <div className="text-white text-lg">Loading achievements...</div>
+      </div>
     );
   }
 
   return (
-    <section
-      className="w-full bg-surface-dark py-20 lg:py-28 relative border-t border-gray-800"
-      id="achievements"
-    >
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+    <div className="bg-background-dark text-white min-h-screen">
+      {/* Hero Section */}
+      <div className="container mx-auto px-6 md:px-12 py-20 mt-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.3 }}
           className="flex flex-col items-center text-center mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
             <span className="h-px w-8 bg-primary"></span>
             <span className="text-primary font-bold tracking-widest uppercase text-sm">
-              Achievements
+              All Achievements
             </span>
             <span className="h-px w-8 bg-primary"></span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white font-display leading-tight mb-4">
-            Key <span className="text-gray-600">Achievements</span>
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl">
-            All of my notable achievements. These achievements represent moments
-            where passion, discipline, and continuous learning came together.
+          <h1 className="text-4xl md:text-6xl font-bold text-white font-display leading-tight mb-4">
+            My <span className="text-primary">Journey</span> of{" "}
+            <span className="text-gray-600">Excellence</span>
+          </h1>
+          <p className="text-gray-400 text-lg max-w-3xl">
+            A comprehensive collection of milestones, awards, and recognitions
+            that represent moments where passion, discipline, and continuous
+            learning came together to create meaningful impact.
           </p>
+          <div className="mt-8 flex items-center gap-4">
+            <Link
+              href="/#achievements"
+              className="inline-flex items-center px-6 py-3 border border-gray-700 text-white font-bold transition-all duration-300 rounded hover:border-primary hover:text-primary"
+            >
+              <i className="fas fa-arrow-left mr-2"></i>
+              Back to Home
+            </Link>
+            <div className="flex items-center gap-2 text-gray-500 text-sm">
+              <i className="fas fa-trophy text-primary"></i>
+              <span className="font-bold">{achievements.length}</span>{" "}
+              Achievements
+            </div>
+          </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        {/* Achievements Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {achievements.map((achievement, index) => {
             const achievementSlug = achievement.title
               .toLowerCase()
@@ -162,13 +176,12 @@ export default function Achievements() {
               <Link key={index} href={`/achievements/${achievementSlug}`}>
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{
                     duration: 0.6,
                     delay: index * 0.1,
                     ease: "easeOut",
                   }}
-                  viewport={{ once: true, amount: 0.3 }}
                   whileHover={{
                     y: -5,
                     transition: { duration: 0.15, ease: "easeOut" },
@@ -215,22 +228,39 @@ export default function Achievements() {
           })}
         </div>
 
+        {/* Bottom CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.3 }}
-          className="mt-16 text-center"
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+          className="mt-20 text-center"
         >
-          <a
-            className="inline-flex items-center justify-center px-8 py-4 border border-gray-700 text-white font-bold transition-all duration-300 rounded hover:border-primary hover:bg-primary hover:shadow-[0_0_20px_rgba(255,87,51,0.4)]"
-            href="/achievements"
-          >
-            View All Achievements
-            <i className="fas fa-trophy ml-2 text-lg"></i>
-          </a>
+          <div className="bg-surface-dark border border-gray-800 rounded-2xl p-12 max-w-3xl mx-auto">
+            <i className="fas fa-quote-left text-primary text-4xl mb-6 opacity-50"></i>
+            <p className="text-xl md:text-2xl text-gray-300 font-light italic leading-relaxed mb-6">
+              Every achievement is a stepping stone, not a destination. The real
+              victory lies in the growth, resilience, and lessons learned along
+              the way.
+            </p>
+            <div className="flex items-center justify-center gap-6 mt-8">
+              <Link
+                href="/#contact"
+                className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold transition-all duration-300 rounded shadow-[0_0_15px_rgba(255,87,51,0.3)] hover:shadow-[0_0_25px_rgba(255,87,51,0.6)] hover:scale-105 uppercase tracking-wide text-sm"
+              >
+                Get In Touch
+                <i className="fas fa-paper-plane ml-2"></i>
+              </Link>
+              <Link
+                href="/#projects"
+                className="inline-flex items-center justify-center px-8 py-4 border border-gray-700 text-white font-bold transition-all duration-300 rounded hover:border-primary hover:text-primary uppercase tracking-wide text-sm"
+              >
+                View Projects
+                <i className="fas fa-code ml-2"></i>
+              </Link>
+            </div>
+          </div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 }

@@ -19,9 +19,16 @@ interface Project {
   github: string;
 }
 
-export default function Projects() {
+export default function AllProjects() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Reset scroll position to top when component mounts
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, []);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -68,48 +75,54 @@ export default function Projects() {
 
   if (loading) {
     return (
-      <section
-        className="w-full bg-background-dark py-20 lg:py-28 relative"
-        id="projects"
-      >
-        <div className="container mx-auto px-6 md:px-12 relative z-10">
-          <div className="flex justify-center items-center">
-            <div className="text-white text-lg">Loading projects...</div>
-          </div>
-        </div>
-      </section>
+      <div className="min-h-screen bg-background-dark flex items-center justify-center">
+        <div className="text-white text-lg">Loading projects...</div>
+      </div>
     );
   }
 
   return (
-    <section
-      className="w-full bg-background-dark py-20 lg:py-28 relative"
-      id="projects"
-    >
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+    <div className="bg-background-dark text-white min-h-screen">
+      {/* Hero Section */}
+      <div className="container mx-auto px-6 md:px-12 py-20 mt-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.3 }}
           className="flex flex-col items-center text-center mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
             <span className="h-px w-8 bg-primary"></span>
             <span className="text-primary font-bold tracking-widest uppercase text-sm">
-              Projects
+              All Projects
             </span>
             <span className="h-px w-8 bg-primary"></span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white font-display leading-tight mb-4">
-            Featured <span className="text-gray-600">Works</span>
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl">
-            A selection of projects that demonstrate my passion for building
-            complex, scalable web applications.
+          <h1 className="text-4xl md:text-6xl font-bold text-white font-display leading-tight mb-4">
+            Building <span className="text-primary">Solutions</span> That{" "}
+            <span className="text-gray-600">Matter</span>
+          </h1>
+          <p className="text-gray-400 text-lg max-w-3xl">
+            A comprehensive showcase of web applications and systems I&apos;ve
+            built, demonstrating expertise in full-stack development, modern
+            frameworks, and scalable architecture.
           </p>
+          <div className="mt-8 flex items-center gap-4">
+            <Link
+              href="/#projects"
+              className="inline-flex items-center px-6 py-3 border border-gray-700 text-white font-bold transition-all duration-300 rounded hover:border-primary hover:text-primary"
+            >
+              <i className="fas fa-arrow-left mr-2"></i>
+              Back to Home
+            </Link>
+            <div className="flex items-center gap-2 text-gray-500 text-sm">
+              <i className="fas fa-code text-primary"></i>
+              <span className="font-bold">{projects.length}</span> Projects
+            </div>
+          </div>
         </motion.div>
 
+        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => {
             // Combine all technologies from frontend, backend, and database
@@ -127,13 +140,12 @@ export default function Projects() {
               <Link key={index} href={`/projects/${projectSlug}`}>
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{
                     duration: 0.6,
                     delay: index * 0.1,
                     ease: "easeOut",
                   }}
-                  viewport={{ once: true, amount: 0.3 }}
                   whileHover={{
                     y: -5,
                     transition: { duration: 0.15, ease: "easeOut" },
@@ -213,22 +225,41 @@ export default function Projects() {
           })}
         </div>
 
+        {/* Bottom CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.3 }}
-          className="mt-16 text-center"
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+          className="mt-20 text-center"
         >
-          <Link
-            href="/projects"
-            className="inline-flex items-center justify-center px-8 py-4 border border-gray-700 text-white font-bold transition-all duration-300 rounded hover:border-primary hover:bg-primary hover:shadow-[0_0_20px_rgba(255,87,51,0.4)]"
-          >
-            View All Projects
-            <i className="fas fa-arrow-right ml-2 text-lg"></i>
-          </Link>
+          <div className="bg-surface-dark border border-gray-800 rounded-2xl p-12 max-w-3xl mx-auto">
+            <i className="fas fa-quote-left text-primary text-4xl mb-6 opacity-50"></i>
+            <p className="text-xl md:text-2xl text-gray-300 font-light italic leading-relaxed mb-6">
+              Code is not just about solving problems—it&apos;s about crafting
+              experiences, building systems that scale, and creating value that
+              lasts.
+            </p>
+            <div className="flex items-center justify-center gap-6 mt-8">
+              <Link
+                href="/#contact"
+                className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold transition-all duration-300 rounded shadow-[0_0_15px_rgba(255,87,51,0.3)] hover:shadow-[0_0_25px_rgba(255,87,51,0.6)] hover:scale-105 uppercase tracking-wide text-sm"
+              >
+                Get In Touch
+                <i className="fas fa-paper-plane ml-2"></i>
+              </Link>
+              <a
+                href="https://github.com/moinulhasan45777?tab=repositories"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-4 border border-gray-700 text-white font-bold transition-all duration-300 rounded hover:border-primary hover:text-primary uppercase tracking-wide text-sm"
+              >
+                GitHub Profile
+                <i className="fab fa-github ml-2"></i>
+              </a>
+            </div>
+          </div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 }

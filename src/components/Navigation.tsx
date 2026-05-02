@@ -23,6 +23,7 @@ export default function Navigation() {
       const sections = [
         "about",
         "expertise",
+        "experience",
         "education",
         "projects",
         "achievements",
@@ -238,6 +239,7 @@ export default function Navigation() {
   const navItems = [
     { href: "#about", label: "About" },
     { href: "#expertise", label: "Skills" },
+    { href: "#experience", label: "Experience" },
     { href: "#education", label: "Education" },
     { href: "#projects", label: "Projects" },
     { href: "#achievements", label: "Achievements" },

@@ -88,7 +88,7 @@ export default function Education() {
                   <div className="flex justify-between items-center text-sm">
                     <span className="text-gray-500">CGPA</span>
                     <span className="text-white font-bold bg-gray-800 px-2 py-0.5 rounded border border-gray-700">
-                      3.72
+                      3.74
                       <span className="text-gray-500 font-normal"> / 4.00</span>
                     </span>
                   </div>
