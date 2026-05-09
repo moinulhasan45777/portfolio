@@ -1,5 +1,43 @@
 [
   {
+    "title": "Champion of YUNet Esports Arena Invitationals 2026 (CS:GO)",
+    "subtitle": "Airtel Presents YUNet Esports Arena Invitationals 2026 Powered by Corsair",
+    "team": "Red ViperZ Gaming",
+    "about": "The YUNet Esports Arena Invitationals 2026, presented by Airtel and powered by Corsair, was a premier invitational Counter-Strike: Global Offensive (CS:GO) tournament held in Bangladesh in March 2026. The event brought together the nation&apos;s top CS:GO teams in an exclusive invitational format, featuring high-level competition, professional production, and significant prize pools. As an invitational tournament, only the most accomplished and elite teams received invitations to compete, making it one of the most prestigious CS:GO events in Bangladesh. The tournament showcased the highest level of competitive Counter-Strike in the country.",
+    "description": "I competed with Red ViperZ Gaming at the YUNet Esports Arena Invitationals 2026, an exclusive invitational tournament featuring Bangladesh&apos;s elite CS:GO teams. Our team demonstrated exceptional skill, strategic depth, and flawless execution throughout the competition to secure the championship title. Competing against hand-picked top teams in this prestigious invitational format, we proved our dominance in the Bangladeshi CS:GO scene once again. The victory at this high-profile event, backed by major sponsors like Airtel and Corsair, further solidified our legacy as the premier Counter-Strike team in Bangladesh.",
+    "quote": "Being invited to compete is an honor, but winning the championship is a statement—a reminder that excellence is not given, it&apos;s earned through dedication and performance.",
+    "learning": [
+      "Mastered performance under the pressure of competing in an exclusive invitational format.",
+      "Developed advanced strategies to counter Bangladesh&apos;s most elite teams.",
+      "Enhanced ability to maintain consistency and composure in high-stakes matches.",
+      "Learned to represent sponsors professionally while delivering championship-level performance.",
+      "Gained experience competing in premium tournament environments with top-tier production."
+    ],
+    "banner": "yunetchampion.jpg",
+    "supportingImage": "",
+    "category": "championship",
+    "date": "March 2026"
+  },
+  {
+    "title": "Most Valuable Player at YUNet Esports Arena Invitationals 2026 (CS:GO)",
+    "subtitle": "Airtel Presents YUNet Esports Arena Invitationals 2026 Powered by Corsair",
+    "team": "Red ViperZ Gaming",
+    "about": "The YUNet Esports Arena Invitationals 2026, presented by Airtel and powered by Corsair, was a premier invitational Counter-Strike: Global Offensive (CS:GO) tournament held in Bangladesh in March 2026. The event brought together the nation&apos;s top CS:GO teams in an exclusive invitational format, featuring high-level competition, professional production, and significant prize pools. As an invitational tournament, only the most accomplished and elite teams received invitations to compete, making it one of the most prestigious CS:GO events in Bangladesh. The tournament showcased the highest level of competitive Counter-Strike in the country.",
+    "description": "I was awarded the Most Valuable Player (MVP) title at the YUNet Esports Arena Invitationals 2026 after delivering exceptional individual performance throughout the tournament. Competing with Red ViperZ Gaming against Bangladesh&apos;s elite teams, I achieved the highest impact rating, most frags, and crucial clutch plays that led our team to the championship. The MVP recognition at this prestigious invitational event demonstrated not only individual mechanical skill but also the ability to perform consistently at the highest level against the nation&apos;s best players. This achievement marked another milestone in my competitive Counter-Strike career.",
+    "quote": "Individual awards are meaningful, but they&apos;re most valuable when they come alongside team success—that&apos;s when you know you&apos;ve truly made an impact.",
+    "learning": [
+      "Developed exceptional individual consistency while maintaining team-oriented gameplay.",
+      "Mastered high-impact plays and clutch situations under tournament pressure.",
+      "Enhanced mechanical skills and game sense to outperform elite-level opponents.",
+      "Learned to balance aggressive playmaking with strategic discipline.",
+      "Gained confidence in performing at MVP level in prestigious invitational tournaments."
+    ],
+    "banner": "yunetmvp.jpg",
+    "supportingImage": "",
+    "category": "achievement",
+    "date": "March 2026"
+  },
+  {
     "title": "20th Place at App Showcasing Event - PC Builder Desktop App",
     "subtitle": "AIUB CS Fest 2024",
     "team": "Neural Nexas",
@@ -38,6 +76,25 @@
     "date": "September 2023"
   },
   {
+    "title": "Undefeated Champion of Discovery One Cup Season 2 (CS:GO)",
+    "subtitle": "Discovery One Cup Season 2 - CS:GO Championship",
+    "team": "Red ViperZ Gaming",
+    "about": "Discovery One Cup Season 2 was the last and biggest national Counter-Strike: Global Offensive (CS:GO) LAN event ever held in Bangladesh. Organized at the Bashundhara Convention Center in September 2023, the tournament marked a historic moment in Bangladeshi esports history. The event brought together the nation&apos;s most elite CS:GO teams in a high-stakes offline competition, featuring intense matches, live audiences, and professional production quality. As the final major CS:GO LAN tournament in Bangladesh before the transition to Counter-Strike 2, this event represented the culmination of years of competitive CS:GO in the country.",
+    "description": "I competed with Red ViperZ Gaming in Discovery One Cup Season 2, the final and largest national CS:GO LAN tournament in Bangladesh&apos;s history. Our team delivered a flawless performance, remaining completely undefeated throughout the entire tournament without dropping a single map. Competing against Bangladesh&apos;s top teams in a LAN environment, we demonstrated superior teamwork, strategic execution, and individual skill to secure the championship title. This undefeated run at the nation&apos;s biggest CS:GO event solidified our position as the dominant force in Bangladeshi Counter-Strike and marked a perfect conclusion to the CS:GO era in Bangladesh.",
+    "quote": "To remain undefeated at the biggest stage is not luck—it&apos;s the result of countless hours of practice, unwavering team trust, and the refusal to accept anything less than perfection.",
+    "learning": [
+      "Mastered the mental fortitude required to maintain an undefeated streak under immense pressure.",
+      "Developed exceptional team coordination and communication in high-stakes LAN environment.",
+      "Learned to adapt strategies mid-tournament while maintaining dominant performance.",
+      "Enhanced ability to perform consistently across multiple best-of-three series without fatigue.",
+      "Understood the legacy and responsibility of being undefeated champions at a historic event."
+    ],
+    "banner": "d1champ.jpg",
+    "supportingImage": "",
+    "category": "championship",
+    "date": "September 2023"
+  },
+  {
     "title": "Represented Bangladesh at IESF 14th World Esports Championship Bali 2022",
     "subtitle": "IESF 14th World Esports Championship Bali 2022",
     "team": "Red ViperZ Gaming",
@@ -57,6 +114,63 @@
     "date": "December 2022"
   },
   {
+    "title": "IESF 2022 National Qualifier Champion - CS:GO",
+    "subtitle": "IESF Bangladesh National Qualifier 2022",
+    "team": "Red ViperZ Gaming",
+    "about": "The IESF National Qualifier is the official pathway for teams to represent their country at the International Esports Federation (IESF) World Championship. Organized annually in Bangladesh, the qualifier brings together the nation&apos;s top Counter-Strike: Global Offensive (CS:GO) teams competing for the prestigious opportunity to represent Bangladesh on the global stage. The tournament features intense competition across multiple rounds, with only the champion earning the right to compete internationally. The qualifier serves as the ultimate test of national supremacy in competitive CS:GO.",
+    "description": "I competed with Red ViperZ Gaming in the IESF 2022 National Qualifier for Counter-Strike: Global Offensive (CS:GO), facing Bangladesh&apos;s elite teams in a high-stakes tournament. Our team demonstrated exceptional coordination, strategic depth, and individual skill throughout the competition, ultimately securing the championship title. This victory earned us the honor of representing Bangladesh at the IESF 14th World Esports Championship in Bali, Indonesia. The qualification process required consistent performance under pressure, adaptability against diverse opponents, and flawless execution of team strategies across multiple best-of-three series.",
+    "quote": "Winning the national qualifier is not just about being the best team today—it&apos;s about proving you can carry your country&apos;s flag with pride on the world stage.",
+    "learning": [
+      "Mastered high-pressure tournament performance against the nation&apos;s top teams.",
+      "Developed advanced team coordination and strategic preparation for championship-level play.",
+      "Learned to maintain consistency and composure throughout extended tournament formats.",
+      "Gained experience in adapting strategies and counter-stratting against familiar opponents.",
+      "Understood the responsibility and honor of representing Bangladesh internationally."
+    ],
+    "banner": "2022NationalQualifier.jpg",
+    "supportingImage": "",
+    "category": "championship",
+    "date": "June 2022"
+  },
+  {
+    "title": "IESF 2023 National Qualifier Champion - CS:GO",
+    "subtitle": "IESF Bangladesh National Qualifier 2023",
+    "team": "Red ViperZ Gaming",
+    "about": "The IESF National Qualifier is the official pathway for teams to represent their country at the International Esports Federation (IESF) World Championship. Organized annually in Bangladesh, the qualifier brings together the nation&apos;s top Counter-Strike: Global Offensive (CS:GO) teams competing for the prestigious opportunity to represent Bangladesh on the global stage. The tournament features intense competition across multiple rounds, with only the champion earning the right to compete internationally. The qualifier serves as the ultimate test of national supremacy in competitive CS:GO.",
+    "description": "I competed with Red ViperZ Gaming in the IESF 2023 National Qualifier for Counter-Strike: Global Offensive (CS:GO), successfully defending our national championship title from the previous year. Facing evolved competition and higher expectations, our team showcased refined strategies, improved individual mechanics, and unmatched team synergy to secure back-to-back national championships. This consecutive victory demonstrated our dominance in the Bangladeshi CS:GO scene and reaffirmed our position as the country&apos;s premier team. The achievement required maintaining peak performance levels, continuous improvement, and the mental fortitude to handle the pressure of being defending champions.",
+    "quote": "Defending a championship is harder than winning it the first time—it requires evolution, resilience, and the hunger to prove yourself all over again.",
+    "learning": [
+      "Developed the mental resilience required to defend a championship title successfully.",
+      "Learned to evolve strategies and playstyles to stay ahead of adapting opponents.",
+      "Mastered the pressure of competing with heightened expectations and target on our backs.",
+      "Enhanced team chemistry and communication through consecutive championship runs.",
+      "Gained experience in maintaining peak performance and motivation over extended periods."
+    ],
+    "banner": "2023NationalQualifier.jpg",
+    "supportingImage": "",
+    "category": "championship",
+    "date": "June 2023"
+  },
+  {
+    "title": "IESF 2025 National Qualifier Champion - CS:GO",
+    "subtitle": "IESF Bangladesh National Qualifier 2025",
+    "team": "Red ViperZ Gaming",
+    "about": "The IESF National Qualifier is the official pathway for teams to represent their country at the International Esports Federation (IESF) World Championship. Organized annually in Bangladesh, the qualifier brings together the nation&apos;s top Counter-Strike: Global Offensive (CS:GO) teams competing for the prestigious opportunity to represent Bangladesh on the global stage. The tournament features intense competition across multiple rounds, with only the champion earning the right to compete internationally. The qualifier serves as the ultimate test of national supremacy in competitive CS:GO.",
+    "description": "I competed with Red ViperZ Gaming in the IESF 2025 National Qualifier for Counter-Strike: Global Offensive (CS:GO), achieving our third national championship title. Despite the transition from CS:GO to Counter-Strike 2 and the evolution of the competitive landscape, our team adapted seamlessly and maintained our dominance in the Bangladeshi scene. This victory marked another milestone in our legacy as the most successful CS:GO/CS2 team in Bangladesh&apos;s IESF history. The championship demonstrated our ability to evolve with the game, maintain team cohesion over years, and consistently perform at the highest national level regardless of meta changes or roster challenges.",
+    "quote": "True champions are defined not by a single victory, but by their ability to adapt, evolve, and dominate across eras.",
+    "learning": [
+      "Mastered the transition from CS:GO to Counter-Strike 2 while maintaining championship-level performance.",
+      "Developed long-term team cohesion and chemistry spanning multiple competitive seasons.",
+      "Learned to adapt to evolving game mechanics, meta shifts, and new competitive landscapes.",
+      "Enhanced leadership and mentorship skills in guiding the team through generational changes.",
+      "Understood the legacy and responsibility of being a three-time national champion."
+    ],
+    "banner": "2025NationalQualifier.jpg",
+    "supportingImage": "",
+    "category": "championship",
+    "date": "June 2025"
+  },
+  {
     "title": "Champion of AIUB Cyber Games 2018",
     "subtitle": "AIUB Cyber Games 2018",
     "team": "ICONS Gaming",
@@ -71,8 +185,27 @@
       "Built confidence in performing consistently in front of live audiences and tournament organizers."
     ],
     "banner": "aiubcybergames.jpg",
-    "supportingImage": "none",
+    "supportingImage": "",
     "category": "event",
     "date": "April 2018"
+  },
+  {
+    "title": "Highest FACEIT Elo Ever Achieved by a CS2 Player in Bangladesh",
+    "subtitle": "FACEIT Competitive Ranking",
+    "team": "Solo Achievement",
+    "about": "FACEIT is one of the world&apos;s leading competitive gaming platforms for Counter-Strike, providing a structured ranking system based on Elo ratings. The platform hosts millions of players globally and serves as a proving ground for aspiring professional players. The Elo system measures individual skill through consistent performance across thousands of matches, with higher Elo representing elite-level gameplay. Reaching the top ranks on FACEIT requires exceptional mechanical skill, game sense, consistency, and the ability to perform against highly skilled opponents from around the world.",
+    "description": "I achieved a historic milestone by reaching 3200 FACEIT Elo in Counter-Strike 2, the highest Elo ever recorded by a player from Bangladesh. This achievement placed me at rank 292 in the entire Southeast Asia (SEA) region and secured the number 1 position in Bangladesh. Reaching this level required thousands of hours of dedicated practice, continuous improvement of mechanical skills, strategic understanding, and mental resilience. The journey involved competing against top-tier players from across Asia, adapting to different playstyles, and maintaining consistency under pressure. This accomplishment represents not only individual skill but also the culmination of years of competitive experience and disciplined training.",
+    "quote": "Reaching the top is not about a single moment of brilliance—it&apos;s about showing up every day, learning from every loss, and refusing to settle for anything less than your best.",
+    "learning": [
+      "Developed exceptional consistency and mental resilience through thousands of competitive matches.",
+      "Learned to analyze and adapt to diverse playstyles from top players across Southeast Asia.",
+      "Mastered advanced game mechanics, positioning, and decision-making under high-pressure scenarios.",
+      "Understood the importance of continuous self-improvement and reviewing gameplay for optimization.",
+      "Gained experience competing at the highest individual skill level in the region."
+    ],
+    "banner": "highestpoints.jpg",
+    "supportingImage": "",
+    "category": "achievement",
+    "date": "May 2025"
   }
 ]

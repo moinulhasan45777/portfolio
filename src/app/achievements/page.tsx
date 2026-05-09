@@ -9,6 +9,14 @@ import { useState, useEffect } from "react";
 import appshowcaseImg from "@/assets/achievements/appshowcase.jpg";
 import mvpImg from "@/assets/achievements/mvp.jpg";
 import iesf2022Img from "@/assets/achievements/Iesf2022.jpg";
+import aiubCyberGamesImg from "@/assets/achievements/aiubcybergames.jpg";
+import highestPointsImg from "@/assets/achievements/highestpoints.jpg";
+import qualifier2022Img from "@/assets/achievements/2022NationalQualifier.jpg";
+import qualifier2023Img from "@/assets/achievements/2023NationalQualifier.jpg";
+import qualifier2025Img from "@/assets/achievements/2025NationalQualifier.jpg";
+import d1ChampImg from "@/assets/achievements/d1champ.jpg";
+import yunetChampionImg from "@/assets/achievements/yunetchampion.jpg";
+import yunetMvpImg from "@/assets/achievements/yunetmvp.jpg";
 
 interface Achievement {
   title: string;
@@ -57,6 +65,14 @@ export default function AllAchievements() {
       "appshowcase.jpg": appshowcaseImg,
       "mvp.jpg": mvpImg,
       "iesf2022.jpg": iesf2022Img,
+      "aiubcybergames.jpg": aiubCyberGamesImg,
+      "highestpoints.jpg": highestPointsImg,
+      "2022NationalQualifier.jpg": qualifier2022Img,
+      "2023NationalQualifier.jpg": qualifier2023Img,
+      "2025NationalQualifier.jpg": qualifier2025Img,
+      "d1champ.jpg": d1ChampImg,
+      "yunetchampion.jpg": yunetChampionImg,
+      "yunetmvp.jpg": yunetMvpImg,
     };
     return imageMap[bannerName] || appshowcaseImg;
   };
