@@ -55,5 +55,24 @@
     "supportingImage": "iesf2022support.jpg",
     "category": "event",
     "date": "December 2022"
+  },
+  {
+    "title": "Champion of AIUB Cyber Games 2018",
+    "subtitle": "AIUB Cyber Games 2018",
+    "team": "ICONS Gaming",
+    "about": "AIUB Cyber Games 2018 was a competitive LAN gaming tournament organized at the American International University-Bangladesh (AIUB), bringing together passionate Counter-Strike: Global Offensive (CS:GO) teams from different parts of Bangladesh. The event featured intense matchups between university teams, local esports organizations, and rising competitive players in a high-energy offline environment. The tournament served as an important platform for young esports talents to showcase their teamwork, communication, strategy, and individual skills while contributing to the growing esports culture in Bangladesh.",
+    "description": "I participated in the Counter-Strike: Global Offensive (CS:GO) segment of AIUB Cyber Games 2018 as a member of ICONS Gaming. Competing against multiple skilled teams from across Bangladesh in a LAN environment, our team secured the championship title through consistent performance, strong teamwork, and disciplined coordination. The tournament experience strengthened my ability to perform under pressure while adapting to fast-paced competitive situations. Winning the event was a significant milestone in my esports journey and helped establish my confidence in organized competitive gaming.",
+    "quote": "Offline tournaments teach you that real competition is not only about mechanics and aim—it is about composure, communication, and delivering when the pressure is highest.",
+    "learning": [
+      "Developed strong communication and coordination skills in a LAN tournament environment.",
+      "Improved adaptability and decision-making during high-pressure competitive matches.",
+      "Learned the importance of teamwork, trust, and strategic execution in esports.",
+      "Gained experience competing against skilled teams from different competitive backgrounds.",
+      "Built confidence in performing consistently in front of live audiences and tournament organizers."
+    ],
+    "banner": "aiubcybergames.jpg",
+    "supportingImage": "none",
+    "category": "event",
+    "date": "April 2018"
   }
 ]
